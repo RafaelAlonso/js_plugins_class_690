@@ -5,6 +5,21 @@
     <title>Playground - JavaScript 101</title>
     <link rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+      #movies-list li {
+        cursor: grab;
+      }
+
+      #movies-list li:active {
+        cursor: grabbing;
+      }
+
+      #movies-list li.ghost {
+        filter: grayscale(1);
+        opacity: 0.5;
+      }
+    </style>
   </head>
   <body>
     <div class="container text-center">
@@ -14,7 +29,14 @@
         <input type="submit" value='Search' class="btn btn-primary mr-auto ml-2">
       </form>
 
-      <ul id='movies-list' class='list-inline'></ul>
+      <ul id='movies-list' class='list-group list-group-horizontal list-inline justify-content-center'></ul>
+
+      <div data-controller="button">
+        <button id="clickme" class="btn btn-primary btn-lg" data-button-target="btn" data-action="click->button#disable">
+          Click me!
+        </button>
+        <a href="#" data-button-target='reset' data-action="click->button#enable">reset link</a>
+      </div>
     </div>
 
 
